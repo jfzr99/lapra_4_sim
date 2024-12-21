@@ -255,8 +255,9 @@
     <script>
         document.getElementById('orderForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzRqtSP-fkhZka1KUDXBYoQwbIRj766ZSowMaFDbzlobWoVQsO9zmFKugNRRGbm_b4G/exec';/
-            
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzRqtSP-fkhZka1KUDXBYoQwbIRj766ZSowMaFDbzlobWoVQsO9zmFKugNRRGbm_b4G/exec';
+            const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("orderForm");
+
             const formData = new FormData(this);
             fetch(scriptURL, {
                 method: 'POST',
