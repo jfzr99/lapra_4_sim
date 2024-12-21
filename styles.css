@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.brand-logo {
+    height: 40px;
+    width: auto;
+}
+
+/* Jumbotron Styles */
+.jumbotron-section {
+    background-image: url('landingpage.jpg');
+    background-size: cover; /* Ensures the image covers the entire jumbotron */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    border-radius: 10px;
+    padding: 3rem;
+    margin: 2rem 0;
+    text-align: center;
+    color: white; /* Adjust text color for better readability */
+    position: relative; /* Ensures text stays on top of the image */
+}
+
+/* Optional: Add a semi-transparent overlay for better text contrast */
+.jumbotron-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Black overlay with 50% opacity */
+    z-index: 1;
+}
+
+.jumbotron-section h1,
+.jumbotron-section p {
+    position: relative; /* Ensures text is above the overlay */
+    z-index: 2;
+}
+
+
+
+/* Form Styles */
+.form-section {
+    margin-bottom: 3rem;
+}
+
+.order-card {
+    border: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.card-header {
+    background-color: #032759;
+    color: white;
+    padding: 1rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-title {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+}
+
+.form-control:focus {
+    border-color: #032759;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+.submit-btn {
+    background-color: #032759;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: #343a40;
+    color: white;
+    padding: 3rem 0;
+    margin-top: 3rem;
+}
+
+.site-footer h5 {
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.social-icons {
+    font-size: 1.5rem;
+}
+
+.social-icons i {
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.social-icons i:hover {
+    color: #032759;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .jumbotron-section {
+        padding: 2rem;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .site-footer {
+        text-align: center;
+    }
+
+    .social-icons {
+        margin-top: 1rem;
+    }
+}
+
+/* Book Showcase Section */
+.book-showcase {
+    padding: 2rem 0;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.book-scroll-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+
+.book-group {
+    display: flex;
+    gap: 20px;
+}
+
+
+/* Scroll Container */
+.book-scroll-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.book-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    animation: scroll 20s linear infinite;
+    width: fit-content;
+}
+
+/* Create a duplicate set of items for seamless scrolling */
+.book-scroll-content {
+    display: flex;
+    gap: 20px;
+    animation: scrollX 15s linear infinite;
+}
+
+/* Stop animation on hover */
+.book-scroll:hover {
+    animation-play-state: paused;
+    cursor: grab;
+}
+
+.book-scroll:active {
+    cursor: grabbing;
+}
+
+.book-group {
+    display: flex;
+    gap: 20px;
+}
+
+
+/* Book Card Styles */
+.book-card {
+    flex: 0 0 auto;
+    width: 200px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    position: relative;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.fast-delivery-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #1A7DD7;
+    color: white;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.book-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* Book Details Styles */
+.book-details {
+    padding: 10px 0;
+}
+
+.book-title {
+    color: #032759;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.book-author {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.book-format {
+    color: #888;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.book-price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.current-price {
+    color: #032759;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.original-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+.discount-badge {
+    background-color:#032759;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.cashback-badge {
+    background-color: #04357a;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* Auto-scroll Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 6 - 20px * 6)); /* Adjust based on card width and gap */
+    }
+}
+
+/* Optional: Add these styles if you want automatic scrolling */
+.book-scroll.auto-scroll {
+    animation: scroll 30s linear infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .book-card {
+        width: 160px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
