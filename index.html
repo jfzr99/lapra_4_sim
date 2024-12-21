@@ -251,14 +251,15 @@
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Google Sheets Integration Script -->
     <script>
         document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // Mencegah form submit default
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzRqtSP-fkhZka1KUDXBYoQwbIRj766ZSowMaFDbzlobWoVQsO9zmFKugNRRGbm_b4G/exec';
-            const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("orderForm");
-
+    
+            // Membuat data form untuk dikirim
             const formData = new FormData(this);
+    
+            // Mengirim data ke Apps Script menggunakan Fetch API
             fetch(scriptURL, {
                 method: 'POST',
                 body: formData
@@ -266,7 +267,7 @@
             .then(response => {
                 if (response.ok) {
                     alert('Order submitted successfully!');
-                    this.reset();
+                    this.reset(); // Reset form setelah submit berhasil
                 } else {
                     throw new Error('Network response was not ok');
                 }
@@ -275,8 +276,9 @@
                 console.error('Error!', error.message);
                 alert('There was an error submitting your order.');
             });
-        }); 
+        });
     </script>
+    
 <script src="script.js"></script>   
 </body>
 </html>
